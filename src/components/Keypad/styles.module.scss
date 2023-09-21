@@ -1,0 +1,51 @@
+.numericKeypadContainer {
+  width: fit-content;
+  margin-right: 32px;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.basicOperations {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.numericKeypadContainer,
+.basicOperations,
+.row {
+  button {
+    width: 64px;
+    height: 64px;
+    margin-right: 32px;
+
+    font-size: 32px;
+    text-align: center;
+    vertical-align: middle;
+
+    border-radius: 100%;
+    transition: 200ms;
+
+    &:active {
+      background-color: #d2d2d2;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.operations {
+  button {
+    color: #ff7f00;
+  }
+}
+
+.equalButton {
+  background-color: #ff7f00;
+  color: white;
+}
