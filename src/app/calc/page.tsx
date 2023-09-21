@@ -8,7 +8,7 @@ export default function Home() {
     <CalcContextProvider>
       <div className={s.calcPage}>
         <div className={s.calcContainer}>
-          <Display expression="2+2" />
+          <Display />
           <Keypad />
         </div>
       </div>
