@@ -4,6 +4,7 @@ import { useContext } from "react";
 import s from "./styles.module.scss";
 import { CalcContext } from "@/contexts/CalcContext";
 import { requestCalc } from "@/services/calcApi";
+import Image from "next/image";
 
 export default function Keypad() {
   const { expression, setExpression, stage, setStage } =
@@ -26,8 +27,8 @@ export default function Keypad() {
   }
 
   function onClickClear(): void {
-    setExpression('');
-    setStage('');
+    setExpression("");
+    setStage("");
   }
 
   function insertStringIntoExpression(string: string): void {
@@ -64,7 +65,15 @@ export default function Keypad() {
     <>
       <div className={`${s.row} ${s.operations}`}>
         <button onClick={() => onClickClear()}>AC</button>
-        <button onClick={() => removeLastChar()}>--</button>
+        <button onClick={() => removeLastChar()}>
+          <Image
+            className={s.backspace}
+            src="/backspace.svg"
+            width={32}
+            height={32}
+            alt="backspace"
+          />
+        </button>
         <button>(</button>
         <button>)</button>
       </div>
@@ -92,7 +101,9 @@ export default function Keypad() {
           <div className={s.row}>
             <button onClick={onClickDot}>.</button>
             <button onClick={() => onClickNumber(0)}>{0}</button>
-            <button onClick={onClickEqual} className={s.equalButton}>=</button>
+            <button onClick={onClickEqual} className={s.equalButton}>
+              =
+            </button>
           </div>
         </div>
 
