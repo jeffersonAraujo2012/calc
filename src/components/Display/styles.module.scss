@@ -3,6 +3,7 @@
   justify-content: flex-end;
   align-items: end;
 
+  width: 352px;
   height: 200px;
   margin-bottom: 8px;
   padding: 16px 24px;
@@ -10,5 +11,12 @@
   border-bottom: 1px solid #d2d2d2;
   //border-radius: 16px;
 
-  font-size: 32px;
+  p {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    word-break: break-all;
+    font-size: 28px;
+    line-height: 32px;
+  }
 }
