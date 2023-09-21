@@ -37,7 +37,7 @@ export default function Keypad() {
           </div>
         </div>
 
-        <div className={`${s.basicOperations} ${s.operations}`}>
+        <div className={`${s.basicOperations} ${s.operations} ${s.btnNoMargin}`}>
           <button>/</button>
           <button>X</button>
           <button>-</button>

@@ -49,3 +49,9 @@
   background-color: #ff7f00;
   color: white;
 }
+
+.btnNoMargin {
+  button {
+    margin-right: 0;
+  }
+}
