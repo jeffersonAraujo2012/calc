@@ -1,0 +1,9 @@
+.calcPage {
+  @apply flex items-center justify-center;
+  @apply w-full min-h-[100vh];
+}
+
+.calcContainer {
+  @apply w-fit p-4 rounded-2xl;
+  @apply bg-white shadow-2xl;
+}
