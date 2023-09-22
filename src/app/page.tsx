@@ -6,8 +6,11 @@ import CalcContextProvider from "@/contexts/CalcContext";
 import s from "./styles.module.scss";
 import { login } from "@/services/calcApi";
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   const [loginData, setLoginData] = useState({
     user: "",
     password: "",
@@ -16,7 +19,9 @@ export default function Home() {
   async function onLogin(e: FormEvent) {
     e.preventDefault();
     const result = await login(loginData);
-    console.log(result);
+    if (result?.status == 200) {
+      router.push('/calc');
+    }
   }
   return (
     <div className={s.containerPage}>
