@@ -58,7 +58,9 @@ export default function Keypad() {
   }
 
   async function onClickEqual(): Promise<void> {
-    await requestCalc(expression);
+    const result = await requestCalc(expression);
+    setExpression(result.toString());
+    setStage(result.toString());
   }
 
   return (
@@ -82,26 +84,26 @@ export default function Keypad() {
         <div className={s.numericKeypadContainer}>
           <div className={s.row}>
             {[7, 8, 9].map((num) => (
-              <button onClick={() => onClickNumber(num)}>{num}</button>
+              <button key={num} onClick={() => onClickNumber(num)}>{num}</button>
             ))}
           </div>
 
           <div className={s.row}>
             {[4, 5, 6].map((num) => (
-              <button onClick={() => onClickNumber(num)}>{num}</button>
+              <button key={num} onClick={() => onClickNumber(num)}>{num}</button>
             ))}
           </div>
 
           <div className={s.row}>
             {[1, 2, 3].map((num) => (
-              <button onClick={() => onClickNumber(num)}>{num}</button>
+              <button key={num} onClick={() => onClickNumber(num)}>{num}</button>
             ))}
           </div>
 
           <div className={s.row}>
             <button onClick={onClickDot}>.</button>
             <button onClick={() => onClickNumber(0)}>{0}</button>
-            <button onClick={onClickEqual} className={s.equalButton}>
+            <button onClick={async() => await onClickEqual()} className={s.equalButton}>
               =
             </button>
           </div>
@@ -111,7 +113,7 @@ export default function Keypad() {
           className={`${s.basicOperations} ${s.operations} ${s.btnNoMargin}`}
         >
           {["/", "*", "-", "+"].map((operator) => (
-            <button onClick={() => onClickOperations(operator)}>
+            <button key={operator} onClick={() => onClickOperations(operator)}>
               {operator == "*" ? "x" : operator}
             </button>
           ))}

@@ -1,0 +1,20 @@
+.containerPage {
+  @apply flex justify-center items-center;
+  @apply w-full min-h-[100vh];
+}
+
+.formCard {
+  @apply flex flex-col gap-3;
+  @apply w-80 p-4 rounded-2xl;
+  @apply bg-white shadow-xl;
+}
+
+.btn {
+  @apply text-white font-semibold rounded-md shadow-md;
+  background-color: #ff7f00;
+  transition: 200ms;
+
+  &:active {
+    @apply bg-gray-300;
+  }
+}
