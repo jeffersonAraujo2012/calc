@@ -38,4 +38,13 @@ Para iniciar esse projeto você precisa obrigatoriamente baixar numa mesma pasta
 
 6. O front da aplicação subirá em localhost:3000 e o back em localhost:5001
 
+## Usuário de teste para login
+
+O usuário de teste para login é:
+
+- Usuário: user
+- Senha: 123456
+
+
+
 
